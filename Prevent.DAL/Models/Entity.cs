@@ -10,7 +10,7 @@ namespace Prevent.DAL.Models
     /// <summary>
     /// Base Entity.
     /// </summary>
-    public class Entity
+    public abstract class Entity
     {
         [Key]
         public int Id { get; set; }

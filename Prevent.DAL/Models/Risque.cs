@@ -20,16 +20,16 @@ namespace Prevent.DAL.Models
 		/// ActiviteRisques : Activités exposant à ce Risque (many-to-many)
 		/// Un même risque peut être induit par plusieurs activités
 		/// </summary>
-		public virtual ICollection<ActiviteRisque> ActiviteRisques { get; set; } 
+		public virtual ICollection<ActiviteRisque> ActivitesRisques { get; set; } 
 
         /// <summary>
         /// Les mesures de prévention contre un Risque donné.
         /// </summary>
-        public virtual ICollection<RisquePrevention> RisquePreventions { get; set; } 
+        public virtual ICollection<RisquePrevention> RisquesPreventions { get; set; } 
 
         /// <summary>
         /// Les Espaces exposés à ce Risque.
         /// </summary>
-        public virtual ICollection<EspaceRisque> EspaceRisques { get; set; } 
+        public virtual ICollection<RisqueReference> RisquesReferences { get; set; } 
     }
 }

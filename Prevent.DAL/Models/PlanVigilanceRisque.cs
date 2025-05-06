@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Prevent.DAL.Models
 {
-	public class PlanPreventionRisque
+	public class PlanVigilanceRisque
 	{
 		[ForeignKey("PlanPrevention")]
 		public int PlanPreventionId { get; set; }
 
-		public required PlanPrevention PlanPrevention { get; set; }
+		public required PlanVigilance PlanPrevention { get; set; }
 
 
 		[ForeignKey("Risque")]

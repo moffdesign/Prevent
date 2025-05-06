@@ -11,13 +11,31 @@ namespace Prevent.DAL.Models
         public DateTime DateSiglmt { get; set; }
         public int Gravite { get; set; }
         public int Priorité { get; set; }
-        public bool UrgenceSignalee { get; set; } = false;
+        public bool IsUrgence { get; set; } = false;
 
-        public string Geolocalisation { get; set; }
-        public string Photos { get; set; }
+        public string? Geolocalisation { get; set; }
+        public string? Photos { get; set; }
 
-        public string AuteurSiglmt { get; set; }
-        public string Description { get; set; }
+        public string? AuteurSiglmt { get; set; }
+        public string? Destinataire { get; set; }
+        public string? Description { get; set; }
+
+        public enum EtatSignalement
+        {
+            Ouvert = 1,
+            Soummis = 2,
+            Recu = 3,
+            EnTraitement = 4,
+            AttenteValidation = 5,
+            Cloture = 6,
+            Annule = 9
+        }
+
+        public EtatSignalement Etat { get; set; } = EtatSignalement.Ouvert;
+        public string? Commentaires { get; set; }
+
+        public bool IsRequalifie { get; set; } = false;
+        public string? Requalification { get; set; }    // plan de vigilance ou plan d'action
 
         /// <summary>
         /// Espace de survenance de rattachement.

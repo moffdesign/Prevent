@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace Prevent.DAL.Models
 {
-	public class EspaceRisque
+    /// <summary>
+    /// RisqueReference : Référence entre un Espace et un Risque.
+	/// Risque référencé à un Espace de survenance.
+    /// </summary>
+    public class RisqueReference
 	{
 		[ForeignKey("Espace")]
 		public int EspaceId { get; set; }

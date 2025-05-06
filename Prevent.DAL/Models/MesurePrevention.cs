@@ -14,11 +14,11 @@ namespace Prevent.DAL.Models
 		/// <summary>
 		/// Les Risques référençant la Mesure de Prévention.
 		/// </summary>
-		public virtual ICollection<RisquePrevention> RisquePreventions { get; set; }
+		public virtual ICollection<RisquePrevention> RisquesPreventions { get; set; }
 
 		/// <summary>
 		/// Les Espaces référençant la Mesure de Prévention.
 		/// </summary>
-		public ICollection<EspacePrevention> EspacePreventions { get; set; } 
+		public ICollection<EspacePrevention> EspacesPreventions { get; set; } 
     }
 }

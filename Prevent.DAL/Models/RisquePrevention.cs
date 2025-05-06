@@ -12,7 +12,7 @@ namespace Prevent.DAL.Models
 		[ForeignKey("Prevention")]
 		public int PreventionId { get; set; }
 
-		public required MesurePrevention Prevention { get; set; }
+		public required MesurePrevention MesurePrevention { get; set; }
 
 
 		[ForeignKey("Risque")]

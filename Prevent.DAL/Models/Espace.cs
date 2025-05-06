@@ -36,10 +36,10 @@ namespace Prevent.DAL.Models
         /// <summary>
         /// Risques auxquels est exposés l'Espace.
         /// </summary>
-        public ICollection<EspaceRisque>? EspaceRisques { get; set; } 
+        public ICollection<RisqueReference>? EspaceRisques { get; set; } 
 
         /// <summary>
-        /// Préventions référencées pour l'Espace courant (Espace+Risque -> Prevention)
+        /// Mesures de Prévention référencées pour l'Espace courant (Espace+Risque -> Prevention)
         /// Uniquement les Mesures de Prévention retenues pour l'espace courant.
         /// </summary>
         public ICollection<EspacePrevention>? EspacePreventions { get; set; }
@@ -63,7 +63,7 @@ namespace Prevent.DAL.Models
         /// <summary>
         /// Plans d'action référençant l'Espace de survenance.
         /// </summary>
-        public ICollection<PlanDAction>? PlanActions { get; set; }
+        public ICollection<PlanAction>? PlanActions { get; set; }
 
         /// <summary>
         /// Audits référençant l'Espace de survenance. 

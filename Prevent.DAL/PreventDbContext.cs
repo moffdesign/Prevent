@@ -24,7 +24,7 @@ namespace Prevent.DAL
 		public DbSet<Evenement> Evenements { get; set; }
 		public DbSet<Audit> Audits { get; set; }
 		public DbSet<Signalement> Signalements { get; set; }
-		public DbSet<PlanDAction> PlanActions { get; set; }
+		public DbSet<PlanAction> PlanActions { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
