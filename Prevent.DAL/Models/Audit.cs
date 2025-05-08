@@ -6,25 +6,24 @@ using System.Threading.Tasks;
 
 namespace Prevent.DAL.Models
 {
+    /// <summary>
+    /// Audit : Audit de sécurité.
+    /// </summary>
     public class Audit : Entity
     {
-        public DateTime DateDebutAudit { get; set; }
-        public DateTime DateFinAudit { get; set; }
-        public string NomAuditeur { get; set; }
+        public DateTime DateDebut { get; set; }
+        public DateTime DateFin { get; set; }
+        public string? NomAuditeur { get; set; }
 
         /// <summary>
         /// Notation: json
         /// </summary>
-        public string Notation { get; set; }
+        public string? Notation { get; set; }
 
         /// <summary>
-        /// clef de l'Espace référencé par l'Audit.
+        /// Espaces référençés par l'Audit.
+        /// Un audit peur porter sur plus d'un espace de survenance
         /// </summary>
-        public int EspaceId { get; set; }
-
-        /// <summary>
-        /// un Audit porte nécessairement sur un Espace de survenance.
-        /// </summary>
-        public required Espace Espace { get; set; }
+        public virtual ICollection<PorteeAudit> PorteesAudits { get; set; } = [];
     }
 }

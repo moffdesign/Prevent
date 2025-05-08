@@ -9,16 +9,16 @@ namespace Prevent.DAL.Models
     /// <summary>
     /// Mesures de Prévention associées à un ou plusieurs Risques.
     /// </summary>
-    public class MesurePrevention : Entity
+    public class Prevention : Entity
     {
 		/// <summary>
 		/// Les Risques référençant la Mesure de Prévention.
 		/// </summary>
-		public virtual ICollection<RisquePrevention> RisquesPreventions { get; set; }
+		public virtual ICollection<PreventionRisque> PreventionsRisques { get; set; } = [];
 
 		/// <summary>
 		/// Les Espaces référençant la Mesure de Prévention.
 		/// </summary>
-		public ICollection<EspacePrevention> EspacesPreventions { get; set; } 
+		public virtual ICollection<PreventionReferencee> PreventionsReferencees { get; set; } = [];
     }
 }

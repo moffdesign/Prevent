@@ -7,24 +7,19 @@ using System.Threading.Tasks;
 namespace Prevent.DAL.Models
 {
     /// <summary>
-    /// Activité exercée dans un Espace de survenance
+    /// Activité
     /// </summary>
     public class Activite : Entity
     {
-        /// <summary>
-        /// ID de l'Espace
-        /// </summary>
-        public int EspaceId { get; set; }
-
-        /// <summary>
-        /// Espace où est exercée cette Activité.
-        /// </summary>
-        public Espace Espace { get; set; }
-
 		/// <summary>
-		/// ActiviteRisques : Risques liés à l'Activité (many-to-many)
+		/// ActivitesRisques : Risques liés à l'Activité (many-to-many)
 		/// Une même Activité peut exposer à plusieurs risques.
 		/// </summary>
-		public virtual ICollection<ActiviteRisque> ActiviteRisques { get; set; } 
+		public virtual ICollection<ActiviteRisque> ActivitesRisques { get; set; } = [];
+
+        /// <summary>
+        /// ActivitesReferences : Les Espaces où cette activité est pratiquée.
+        /// </summary>
+        public virtual ICollection<ActiviteReference> ActivitesReferences { get; set; } = [];
     }
 }

@@ -31,44 +31,46 @@ namespace Prevent.DAL.Models
         /// <summary>
         /// Employés de l'Espace : Plusieurs employés peuvent être affectés au même Espace.
         /// </summary>
-        public ICollection<EmployeEspace>? EmployeEspaces { get; set; } 
+        public virtual ICollection<EmployeReference> EmployesReferences { get; set; } = [];
 
         /// <summary>
         /// Risques auxquels est exposés l'Espace.
         /// </summary>
-        public ICollection<RisqueReference>? EspaceRisques { get; set; } 
+        public virtual ICollection<RisqueReference> EspacesReferences { get; set; } = [];
 
         /// <summary>
         /// Mesures de Prévention référencées pour l'Espace courant (Espace+Risque -> Prevention)
         /// Uniquement les Mesures de Prévention retenues pour l'espace courant.
         /// </summary>
-        public ICollection<EspacePrevention>? EspacePreventions { get; set; }
+        public virtual ICollection<PreventionReferencee> PreventionsReferencees { get; set; } = [];
 
         /// <summary>
         /// Activités de l'Espace 
         /// Plusieurs Activités peuvent être exercées dans un même Espace.
         /// </summary>
-        public ICollection<Activite>? Activites { get; set; }
+        public virtual ICollection<Activite> ActivitesReferencees { get; set; } = [];
+
 
         /// <summary>
         /// Signalements référençant l'Espace de survenance.
         /// </summary>
-        public ICollection<Signalement>? Signalements { get; set; }
+        public virtual ICollection<Signalement> Signalements { get; set; } = [];
 
         /// <summary>
         /// Evénements référençant l'Espace de survenance.
         /// </summary>
-        public ICollection<Evenement>? Evenements { get; set; }
+        public virtual ICollection<PorteeEvenement> PorteesEvenements { get; set; } = [];
 
         /// <summary>
         /// Plans d'action référençant l'Espace de survenance.
         /// </summary>
-        public ICollection<PlanAction>? PlanActions { get; set; }
+        public virtual ICollection<PorteePlan> PorteesPlans { get; set; } = [];
 
         /// <summary>
         /// Audits référençant l'Espace de survenance. 
-        /// Un espace peut être audité autant de fois que nécessaire pour améliorer la sécurité.
+        /// Un audit peur porter sur plus d'un espace de survenance
         /// </summary>
-        public ICollection<Audit>? Audits { get; set; }
+        public virtual ICollection<PorteeAudit> PorteesAudits { get; set; } = [];
+
     }
 }

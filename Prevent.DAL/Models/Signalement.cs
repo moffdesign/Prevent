@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,11 +41,14 @@ namespace Prevent.DAL.Models
         /// <summary>
         /// Espace de survenance de rattachement.
         /// </summary>
+        [ForeignKey("EspaceId")]
         public int EspaceId { get; set; }
 
         /// <summary>
         /// Un Signalement porte un seul Espace de survenance. L'espace est forcément connu à défaut on met un default(Espace)
         /// </summary>
         public required Espace Espace { get; set; }
+
+        public virtual ICollection<Plan> Plans { get; set; } = [];
     }
 }

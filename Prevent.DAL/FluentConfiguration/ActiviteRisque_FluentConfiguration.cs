@@ -19,13 +19,13 @@ namespace Prevent.DAL.FluentConfiguration
 
 			modelBuilder
 				.HasOne(a => a.Risque)
-				.WithMany(b => b.ActiviteRisques)
+				.WithMany(b => b.ActivitesRisques)
 				.HasForeignKey(a => a.RisqueId)
 				.IsRequired();
 
 			modelBuilder
 				.HasOne(a => a.Activite)
-				.WithMany(b => b.ActiviteRisques)
+				.WithMany(b => b.ActivitesRisques)
 				.HasForeignKey(a => a.ActiviteId)
 				.IsRequired();
 		}

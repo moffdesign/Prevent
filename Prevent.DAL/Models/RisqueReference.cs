@@ -13,17 +13,18 @@ namespace Prevent.DAL.Models
     /// </summary>
     public class RisqueReference
 	{
-		[ForeignKey("Espace")]
+		[ForeignKey("EspaceId")]
 		public int EspaceId { get; set; }
 
 		public required Espace Espace { get; set; }
 
 
-		[ForeignKey("Risque")]
+		[ForeignKey("RisqueId")]
 		public int RisqueId { get; set; }
 
 		public required Risque Risque { get; set; }
 
+		public int Probabilite { get; set; } = 0;
 		public int Gravite { get; set; } = 0;
 		public int Criticite { get; set; } = 0;
 

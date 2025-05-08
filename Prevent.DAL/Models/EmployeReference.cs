@@ -7,17 +7,20 @@ using System.Threading.Tasks;
 
 namespace Prevent.DAL.Models
 {
-	public class EspacePrevention
+    /// <summary>
+    /// EmployeReference : Table de jointure entre Espace et Employe.
+    /// </summary>
+    public class EmployeReference
 	{
-		[ForeignKey("Espace")]
+		[ForeignKey("EspaceId")]
 		public int EspaceId { get; set; }
 
 		public required Espace Espace { get; set; }
 
 
-		[ForeignKey("Prevention")]
-		public int PreventionId { get; set; }
+		[ForeignKey("EmployeId")]
+		public int EmployeId { get; set; }
 
-		public required MesurePrevention Prevention { get; set; }
+		public required Employe Employe { get; set; }
 	}
 }

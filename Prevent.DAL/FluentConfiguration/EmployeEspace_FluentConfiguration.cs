@@ -10,7 +10,7 @@ namespace Prevent.DAL.FluentConfiguration
 {
 	public class EmployeEspace_FluentConfiguration
 	{
-		public void Configure(EntityTypeBuilder<EmployeEspace> modelBuilder)
+		public void Configure(EntityTypeBuilder<EmployeReference> modelBuilder)
 		{
 			modelBuilder
 				.HasKey(ar => new { ar.EspaceId, ar.EmployeId });

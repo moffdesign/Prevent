@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace Prevent.DAL.Models
         /// <summary>
         /// Signalement
         /// </summary>
+        [ForeignKey("SignalementId")]
         public int SignalementId { get; set; }
 
         /// <summary>

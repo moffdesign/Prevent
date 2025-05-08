@@ -11,7 +11,7 @@ namespace Prevent.DAL.FluentConfiguration
 {
 	public class RisquePrevention_FluentConfiguration
 	{
-		public void Configure(EntityTypeBuilder<RisquePrevention> modelBuilder)
+		public void Configure(EntityTypeBuilder<PreventionRisque> modelBuilder)
 		{
 			modelBuilder
 				.HasKey(ar => new { ar.PreventionId, ar.RisqueId });

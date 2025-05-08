@@ -11,7 +11,19 @@ namespace Prevent.DAL.Models
     /// </summary>
     public class Evenement : Entity
     {
-        public int EspaceId { get; set; }
-        public required Espace Espace { get; set; }
+        public DateOnly DateEvenement { get; set; } = DateOnly.FromDateTime(DateTime.Now);
+
+        public int Gravite { get; set; } = 0;
+        public int Criticite { get; set; } = 0;
+
+        /// <summary>
+        /// Espaces référençant l'événement courant.
+        /// </summary>
+        public virtual ICollection<PorteeEvenement> PorteesEvenements { get; set; } = [];
+
+        /// <summary>
+        /// Plans d'action ou de vigilance mis en oeuvre, référençant l'événement courant.
+        /// </summary>
+        public virtual ICollection<Plan> Plans { get; set; } = [];
     }
 }

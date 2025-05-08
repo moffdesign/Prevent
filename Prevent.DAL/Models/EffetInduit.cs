@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Prevent.DAL.Models
 {
-    public class Effet : Entity
+    public class EffetInduit : Entity
     {
         //public ICollection<Risque> Risques { get; set; }
     }

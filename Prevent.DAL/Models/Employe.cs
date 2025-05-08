@@ -38,19 +38,13 @@ namespace Prevent.DAL.Models
         public int SituationMaritale { get; set; } = 0;
         public byte[] Photo { get; set; } = []; //TODO: Convertir en image
 
-        /*
-        public virtual string Abrev { get; set; } = string.Empty;
-        public virtual string Libelle { get; set; } = string.Empty;
-        public virtual string Code { get; set; } = string.Empty;
-        public virtual string Couleur { get; set; } = string.Empty;
-        public virtual string Bulle { get; set; } = string.Empty;
-        */
+
         public override string Libelle { get => Nom + " " + Prenom; }
 
         /// <summary>
-        /// Espaces où exerce l'Employé.
+        /// EmployesReferences : Espaces où exerce l'Employé.
         /// Un employé peut travailler ou être affecté dans plus d'un espace
         /// </summary>
-        public ICollection<EmployeEspace>? EmployeEspaces { get; set; } //
+        public ICollection<EmployeReference> EmployesReferences { get; set; } = [];
     }
 }

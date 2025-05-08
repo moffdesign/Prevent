@@ -7,15 +7,18 @@ using System.Threading.Tasks;
 
 namespace Prevent.DAL.Models
 {
-	public class RisquePrevention
+    /// <summary>
+    /// PreventionRisque : Association entre une Prevention et un Risque (Many-to-Many).
+    /// </summary>
+    public class PreventionRisque
 	{
-		[ForeignKey("Prevention")]
+		[ForeignKey("PreventionId")]
 		public int PreventionId { get; set; }
 
-		public required MesurePrevention MesurePrevention { get; set; }
+		public required Prevention Prevention { get; set; }
 
 
-		[ForeignKey("Risque")]
+		[ForeignKey("RisqueId")]
 		public int RisqueId { get; set; }
 
 		public required Risque Risque { get; set; }
