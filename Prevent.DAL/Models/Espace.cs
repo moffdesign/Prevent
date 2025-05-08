@@ -36,7 +36,7 @@ namespace Prevent.DAL.Models
         /// <summary>
         /// Risques auxquels est exposés l'Espace.
         /// </summary>
-        public virtual ICollection<RisqueReference> EspacesReferences { get; set; } = [];
+        public virtual ICollection<RisqueReference> RisquesReferences { get; set; } = [];
 
         /// <summary>
         /// Mesures de Prévention référencées pour l'Espace courant (Espace+Risque -> Prevention)
@@ -48,7 +48,7 @@ namespace Prevent.DAL.Models
         /// Activités de l'Espace 
         /// Plusieurs Activités peuvent être exercées dans un même Espace.
         /// </summary>
-        public virtual ICollection<Activite> ActivitesReferencees { get; set; } = [];
+        public virtual ICollection<ActiviteReferencee> ActivitesReferencees { get; set; } = [];
 
 
         /// <summary>

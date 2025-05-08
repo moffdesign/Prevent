@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace Prevent.DAL.FluentConfiguration
 {
-	public class PlanPreventionRisque_FluentConfiguration
-	{
-		public void Configure(EntityTypeBuilder<PlanVigilanceRisque> modelBuilder)
+	public class PreventionRisque_FluentConfiguration : IEntityTypeConfiguration<PreventionRisque>
+    {
+		public void Configure(EntityTypeBuilder<PreventionRisque> modelBuilder)
 		{
 			modelBuilder
-				.HasKey(ar => new { ar.PlanPreventionId, ar.RisqueId });
+				.HasKey(ar => new { ar.PreventionId, ar.RisqueId });
 
 			modelBuilder
 				.HasOne(a => a.Risque)
-				.WithMany(b => b.PlanPreventionRisques)
+				.WithMany(b => b.PreventionsRisques)
 				.HasForeignKey(a => a.RisqueId)
 				.IsRequired();
 
 			modelBuilder
-				.HasOne(a => a.PlanPrevention)
-				.WithMany(b => b.PlanPreventionRisques)
-				.HasForeignKey(a => a.PlanPreventionId)
+				.HasOne(a => a.Prevention)
+				.WithMany(b => b.PreventionsRisques)
+				.HasForeignKey(a => a.PreventionId)
 				.IsRequired();
 		}
 	}

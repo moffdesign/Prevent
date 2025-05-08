@@ -1,15 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Prevent.DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Prevent.DAL.FluentConfiguration
 {
-	public class EmployeEspace_FluentConfiguration
-	{
+	public class EmployeReference_FluentConfiguration : IEntityTypeConfiguration<EmployeReference>
+    {
 		public void Configure(EntityTypeBuilder<EmployeReference> modelBuilder)
 		{
 			modelBuilder
@@ -17,13 +13,13 @@ namespace Prevent.DAL.FluentConfiguration
 
 			modelBuilder
 				.HasOne(a => a.Employe)
-				.WithMany(b => b.EmployeEspaces)
+				.WithMany(b => b.EmployesReferences)
 				.HasForeignKey(a => a.EmployeId)
 				.IsRequired();
 
 			modelBuilder
 				.HasOne(a => a.Espace)
-				.WithMany(b => b.EmployeEspaces)
+				.WithMany(b => b.EmployesReferences)
 				.HasForeignKey(a => a.EspaceId)
 				.IsRequired();
 		}

@@ -10,7 +10,7 @@ namespace Prevent.DAL.Models
     /// <summary>
     /// ActiviteReference : Activité exercée dans un Espace donné (many-to-many)
     /// </summary>
-    public class ActiviteReference
+    public class ActiviteReferencee
     {
         [ForeignKey("ActiviteId")]
         public int ActiviteId { get; set; }

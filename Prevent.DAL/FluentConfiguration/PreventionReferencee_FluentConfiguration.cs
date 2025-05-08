@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Prevent.DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace Prevent.DAL.FluentConfiguration
 {
-	public class EspacePrevention_FluentConfiguration
-	{
+	public class PreventionReferencee_FluentConfiguration : IEntityTypeConfiguration<PreventionReferencee>
+    {
 		public void Configure(EntityTypeBuilder<PreventionReferencee> modelBuilder)
 		{
 			modelBuilder
@@ -17,13 +18,13 @@ namespace Prevent.DAL.FluentConfiguration
 
 			modelBuilder
 				.HasOne(a => a.Prevention)
-				.WithMany(b => b.EspacePreventions)
+				.WithMany(b => b.PreventionsReferencees)
 				.HasForeignKey(a => a.PreventionId)
 				.IsRequired();
 
 			modelBuilder
 				.HasOne(a => a.Espace)
-				.WithMany(b => b.EspacePreventions)
+				.WithMany(b => b.PreventionsReferencees)
 				.HasForeignKey(a => a.EspaceId)
 				.IsRequired();
 		}

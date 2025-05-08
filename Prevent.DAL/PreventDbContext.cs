@@ -28,7 +28,7 @@ namespace Prevent.DAL
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.ApplyConfiguration(new FluentConfiguration.Espace_FluentConfiguration());
+			modelBuilder.ApplyConfiguration(new FluentConfiguration.PorteeAudit_FluentConfiguration());
 			modelBuilder.ApplyConfiguration(new FluentConfiguration.ActiviteRisque_FluentConfiguration());
 			//modelBuilder.Entity<Brand>().HasData(new Brand { BrandId = 1, BrandName = "Brand 1" });
 

@@ -20,6 +20,6 @@ namespace Prevent.DAL.Models
         /// <summary>
         /// ActivitesReferences : Les Espaces où cette activité est pratiquée.
         /// </summary>
-        public virtual ICollection<ActiviteReference> ActivitesReferences { get; set; } = [];
+        public virtual ICollection<ActiviteReferencee> ActivitesReferencees { get; set; } = [];
     }
 }
