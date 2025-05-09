@@ -9,11 +9,13 @@ namespace Prevent.DAL.Enum
     public enum EtatSignalement
     {
         Ouvert = 1,
-        Soummis = 2,
-        Recu = 3,
-        EnTraitement = 4,
-        AttenteValidation = 5,
-        Cloture = 6,
+        Soummission = 2,
+        Rejete = 3,
+        Approbation = 4,
+        Traitement = 5,
+        Validation = 6,
+        Suspension = 7,
+        Cloture = 8,
         Annule = 9
     }
 

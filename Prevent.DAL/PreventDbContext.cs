@@ -1,11 +1,5 @@
-﻿using FluentNHibernate.Cfg;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Prevent.DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Prevent.DAL
@@ -43,8 +37,18 @@ namespace Prevent.DAL
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-            //modelBuilder.Entity<Evenement>().
+			base.OnModelCreating(modelBuilder);
+
+			modelBuilder.Entity<Activite>().ToTable("Activite", "Prevention");
+			modelBuilder.Entity<Audit>().ToTable("Audit", "Prevention");
+			modelBuilder.Entity<Employe>().ToTable("Employe", "Prevention");
+			modelBuilder.Entity<Espace>().ToTable("Espace", "Prevention");
             modelBuilder.Entity<Evenement>().ToTable("Evenement", "Prevention");
+            modelBuilder.Entity<Plan>().ToTable("Plan", "Prevention");
+            modelBuilder.Entity<Prevention>().ToTable("Prevention", "Prevention");
+            modelBuilder.Entity<Risque>().ToTable("Risque", "Prevention");
+            modelBuilder.Entity<Signalement>().ToTable("Signalement", "Prevention");
+
 
             //modelBuilder.ApplyConfiguration(new FluentConfiguration.Audit_FluentConfiguration());
             modelBuilder.ApplyConfiguration(new FluentConfiguration.Activite_FluentConfiguration());

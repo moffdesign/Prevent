@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using NHibernate.Criterion;
 using Prevent.DAL.Models;
 
 namespace Prevent.DAL.FluentConfiguration

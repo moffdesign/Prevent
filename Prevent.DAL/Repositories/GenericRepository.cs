@@ -35,22 +35,22 @@ namespace Prevent.DAL.Repositories
 				await SaveAsync();
 			}
 		}
-		public async Task<T> GetByIdAsync(int id)
-		{
-			return await _dbSet.FindAsync(id);
-		}
+        public async Task<T?> GetByIdAsync(int id)
+        {
+            return await _dbSet.FindAsync(id);
+        }
 
-		public async Task<List<T>> GetAllAsync(bool tracked = true)
-		{
-			IQueryable<T> query = _dbSet;
+        public async Task<List<T>> GetAllAsync(bool tracked = true)
+        {
+            IQueryable<T> query = _dbSet;
 
-			if (!tracked)
-			{
-				query = query.AsNoTracking();
-			}
+            if (!tracked)
+            {
+                query = query.AsNoTracking();
+            }
 
-			return await query.ToListAsync();
-		}
+            return await query.ToListAsync();
+        }
 
 		public async Task UpdateAsync(T entity)
 		{

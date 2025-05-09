@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Prevent.DAL.Enum;
 
 namespace Prevent.DAL.Models
 {
@@ -13,7 +14,9 @@ namespace Prevent.DAL.Models
     {
         public DateOnly DateEvenement { get; set; } = DateOnly.FromDateTime(DateTime.Now);
 
-        public int Gravite { get; set; } = 0;
+        //public int Gravite { get; set; } = 0;
+        public Gravite Gravite { get; set; } = Gravite.Mineure;
+
         public int Criticite { get; set; } = 0;
 
         public string Preventeur { get; set; } = string.Empty;

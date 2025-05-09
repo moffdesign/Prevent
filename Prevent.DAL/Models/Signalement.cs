@@ -11,8 +11,13 @@ namespace Prevent.DAL.Models
     public class Signalement : Entity
     {
         public DateTime DateSiglmt { get; set; }
-        public int Gravite { get; set; }
-        public int Priorité { get; set; }
+
+        //public int Gravite { get; set; }
+        public Gravite Gravite { get; set; } = Gravite.Mineure;
+
+        //public int Priorité { get; set; }
+        public Priorite Priorite { get; set; } = Priorite.Basse;
+
         public bool IsUrgence { get; set; } = false;
 
         public string? Geolocalisation { get; set; }
