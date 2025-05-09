@@ -22,5 +22,8 @@ namespace Prevent.DAL.Models
 		public int EmployeId { get; set; }
 
 		public required Employe Employe { get; set; }
-	}
+
+		public DateTime? DebutAffectation { get; set; } = null;
+        public DateTime? FinAffectation { get; set; } = null;
+    }
 }

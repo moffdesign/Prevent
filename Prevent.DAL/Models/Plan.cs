@@ -4,17 +4,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Prevent.DAL.Enum;
 
 namespace Prevent.DAL.Models
 {
-    public abstract class Plan : Entity
+    public class Plan : Entity
     {
-        //public Int16 TypePlan { get; set; } = 0; // 0 = Plan d'action, 1 = Plan de vigilance
-        public enum TypePlan
-        {
-            PlanAction = 0,
-            PlanVigilance = 1
-        }
+        
         public TypePlan Type { get; set; } = TypePlan.PlanAction;
 
         public int Frequence { get; set; }

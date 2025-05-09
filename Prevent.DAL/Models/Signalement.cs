@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Prevent.DAL.Enum;
 
 namespace Prevent.DAL.Models
 {
@@ -21,22 +22,14 @@ namespace Prevent.DAL.Models
         public string? Destinataire { get; set; }
         public string? Description { get; set; }
 
-        public enum EtatSignalement
-        {
-            Ouvert = 1,
-            Soummis = 2,
-            Recu = 3,
-            EnTraitement = 4,
-            AttenteValidation = 5,
-            Cloture = 6,
-            Annule = 9
-        }
-
+        
         public EtatSignalement Etat { get; set; } = EtatSignalement.Ouvert;
         public string? Commentaires { get; set; }
 
         public bool IsRequalifie { get; set; } = false;
         public string? Requalification { get; set; }    // plan de vigilance ou plan d'action
+
+        public string Preventeur { get; set; } = string.Empty;
 
         /// <summary>
         /// Espace de survenance de rattachement.

@@ -8,6 +8,18 @@ namespace Prevent.DAL.FluentConfiguration
 	{
         public void Configure(EntityTypeBuilder<PorteeAudit> modelBuilder)
         {
+            modelBuilder.ToTable("PorteeAudit", "Prevention");
+            
+            modelBuilder
+                .Property(a => a.AuditId)
+                .HasColumnName("AuditId")
+                .IsRequired();
+            
+            modelBuilder
+                .Property(a => a.EspaceId)
+                .HasColumnName("EspaceId")
+                .IsRequired();
+
             modelBuilder
                 .HasKey(ar => new { ar.EspaceId, ar.AuditId });
 

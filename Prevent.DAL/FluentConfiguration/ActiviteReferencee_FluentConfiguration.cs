@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using NHibernate.Criterion;
 using Prevent.DAL.Models;
 
 namespace Prevent.DAL.FluentConfiguration
@@ -8,6 +9,18 @@ namespace Prevent.DAL.FluentConfiguration
     {
         public void Configure(EntityTypeBuilder<ActiviteReferencee> modelBuilder)
         {
+            modelBuilder.ToTable("ActiviteReferencee", "Prevention");
+
+            modelBuilder
+                .Property(a => a.ActiviteId)
+                .HasColumnName("ActiviteId")
+                .IsRequired();
+
+            modelBuilder .Property(a => a.EspaceId)
+                .HasColumnName("EspaceId")
+                .IsRequired();
+
+
             modelBuilder
                 .HasKey(ar => new { ar.EspaceId, ar.ActiviteId });
 
@@ -22,6 +35,7 @@ namespace Prevent.DAL.FluentConfiguration
                 .WithMany(b => b.ActivitesReferencees)
                 .HasForeignKey(a => a.EspaceId)
                 .IsRequired();
+
         }
     }
 }

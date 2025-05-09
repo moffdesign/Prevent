@@ -16,6 +16,8 @@ namespace Prevent.DAL.Models
         public int Gravite { get; set; } = 0;
         public int Criticite { get; set; } = 0;
 
+        public string Preventeur { get; set; } = string.Empty;
+
         /// <summary>
         /// Espaces référençant l'événement courant.
         /// </summary>

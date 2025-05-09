@@ -43,7 +43,13 @@ namespace Prevent.DAL
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
+            //modelBuilder.Entity<Evenement>().
+            modelBuilder.Entity<Evenement>().ToTable("Evenement", "Prevention");
+
             //modelBuilder.ApplyConfiguration(new FluentConfiguration.Audit_FluentConfiguration());
+            modelBuilder.ApplyConfiguration(new FluentConfiguration.Activite_FluentConfiguration());
+            modelBuilder.ApplyConfiguration(new FluentConfiguration.Espace_FluentConfiguration());
+            modelBuilder.ApplyConfiguration(new FluentConfiguration.Evenement_FluentConfiguration());
 
             modelBuilder.ApplyConfiguration(new FluentConfiguration.ActiviteRisque_FluentConfiguration());
             modelBuilder.ApplyConfiguration(new FluentConfiguration.ActiviteReferencee_FluentConfiguration());

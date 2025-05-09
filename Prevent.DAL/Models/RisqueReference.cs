@@ -28,6 +28,13 @@ namespace Prevent.DAL.Models
 		public int Gravite { get; set; } = 0;
 		public int Criticite { get; set; } = 0;
 
-		public string Observation { get; set; } = string.Empty;
-	}
+		public bool EstPermanent { get; set; } = false;
+		public DateTime? DateDebut { get; set; } = null;
+        public DateTime? DateFin { get; set; } = null;
+		        
+		public DateTime DateEvaluation { get; set; } = DateTime.Now;
+        public string Preventeur { get; set; } = string.Empty;
+
+        public string Observation { get; set; } = string.Empty;
+    }
 }
